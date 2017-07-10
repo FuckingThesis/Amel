@@ -1,0 +1,22 @@
+%----------------------------------------------------------------------------------------
+%	Glossary
+%----------------------------------------------------------------------------------------
+\newpage
+\refstepcounter{dummy}
+
+\setglossarystyle{altlist} 
+\printglossary[title={Glossaire}]
+
+% Bibliography
+% %\renewcommand*{\bibname}{new name} % Uncomment to change the name of the bibliography
+% %\setbibpreamble{} % Uncomment to include a preamble to the bibliography - some text before the reference list starts
+
+{%
+\setstretch{1.1}
+\renewcommand{\bibfont}{\normalfont\small}
+\setlength{\biblabelsep}{0pt}
+\setlength{\bibitemsep}{0.5\baselineskip plus 0.5\baselineskip}
+\printbibliography[nottype=online]
+% \printbibliography[heading=subbibliography,title={Webpages},type=online,prefixnumbers={@}]
+}
+\cleardoublepage

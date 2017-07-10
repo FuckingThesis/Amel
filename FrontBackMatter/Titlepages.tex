@@ -1,0 +1,93 @@
+% !TEX root = ../thesis-example.tex
+%
+% ------------------------------------  --> cover title page
+\begin{titlepage}
+	\pdfbookmark[0]{Cover}{Cover}
+	\flushright
+	\hfill
+	\vfill
+	{\LARGE\thesisTitle \par}
+	\rule[5pt]{\textwidth}{.4pt} \par
+	{\Large\thesisName}
+	\vfill
+	\textit{\large\thesisDate} \\
+	Version: \thesisVersion
+\end{titlepage}
+
+
+% ------------------------------------  --> main title page
+\begin{titlepage}
+	\pdfbookmark[0]{Titlepage}{Titlepage}
+	\tgherosfont
+	\centering
+
+	{\Huge \thesisUniversity} \\[2mm]
+    {\Large \thesisUniversityDepartment} \\[4mm]
+	\includegraphics[width=6cm]{gfx/upmc_logo.png} \\[2mm]
+	
+	\textsf{\large \thesisUniversityGroup} \\
+    \textsf{\large \thesisUniversityInstitute} \\
+
+	\vfill
+	{\Large \thesisSubject} \\[5mm]
+	{\LARGE \color{ctcolortitle}\textbf{\thesisTitle} \\[10mm]}
+	{\Large \thesisName} \\
+
+	\vfill
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{1. Reviewer}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		{\Large \thesisFirstReviewer} \\
+	  	{\small \thesisFirstReviewerDepartment} \\[-1mm]
+		{\small \thesisFirstReviewerUniversity}
+	\end{minipage} \\[5mm]
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{2. Reviewer}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		{\Large \thesisSecondReviewer} \\
+	  	{\small \thesisSecondReviewerDepartment} \\[-1mm]
+		{\small \thesisSecondReviewerUniversity}
+	\end{minipage} \\[10mm]
+	\begin{minipage}[t]{.27\textwidth}
+		\raggedleft
+		\textit{Encadrants}
+	\end{minipage}
+	\hspace*{15pt}
+	\begin{minipage}[t]{.65\textwidth}
+		\thesisFirstSupervisor\ et \thesisSecondSupervisor
+	\end{minipage} \\[10mm]
+
+	\thesisDate \\
+    \vfill
+    
+%     \marginpar{
+    \includegraphics[width=\textwidth]{gfx/cc_nc_nd.png}
+%     }
+
+\end{titlepage}
+
+
+% ------------------------------------  --> lower title back for single page layout
+\hfill
+\vfill
+{
+	\small
+	\textit{\thesisTitle,} \thesisName \\
+    \textcopyright\ \thesisDate \\
+	\thesisSubject\\
+	Rapporteurs: \thesisFirstReviewer\ and \thesisSecondReviewer \\
+	Directeur de th\`ese: \thesisFirstSupervisor\\
+    Co-Directeur de th\`ese: \thesisSecondSupervisor \\[1.5em]
+	\textbf{\thesisUniversity} \\
+	\thesisUniversityDepartment \\
+    \textit{\thesisUniversityGroup} \\
+	\thesisUniversityInstitute \\
+	\thesisUniversityStreetAddress \\
+	\thesisUniversityPostalCode\ \thesisUniversityCity
+}

@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thesis Configuration File
+%
+% This file has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de) with extensive commenting changes by:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License (v2)
+%
+% Important note:
+% The main lines to change in this file are in the DOCUMENT VARIABLES
+% section, the rest of the file is for advanced configuration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}		% defines file's character encoding
+
+\usepackage[french,main=french]{babel} % babel system, adjust the language of the content
+
+\usepackage[					% clean thesis style
+	figuresep=colon,%
+	sansserif=true,%
+	hangfigurecaption=false,%
+	hangsection=true,%
+	hangsubsection=true,%
+	colorize=full,%
+	colortheme=bluegreen,%
+% LLT: Use biber if using UTF8 encoding
+% 	bibsys=bibtex,%
+	bibsys=biber,%
+% 	bibfile=bib-refs,%
+    bibfile=library,%
+	bibstyle=numeric,%
+%     bibstyle=apa,%
+]{cleanthesis}
+
+% **************************************************
+% DOCUMENT VARIABLES
+% **************************************************
+% \newcommand{\thesisTitle}{D\'eveloppement de nouvelles strat\'egies de pr\' ediction structurale à partir de contacts \'evolutifs\xspace}
+\newcommand{\thesisTitle}{Calcul efficace de la structure des prot\'eines \`a partir de contacts \'evolutifs\xspace}
+\newcommand{\thesisName}{Fabrice Allain\xspace}
+\newcommand{\thesisSubject}{Thèse de doctorat en Sciences de la Vie\xspace}
+\newcommand{\thesisDate}{Automne 2017}
+\newcommand{\thesisVersion}{0.1}
+
+\newcommand{\thesisFirstReviewer}{Jane Doe}
+\newcommand{\thesisFirstReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisFirstReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisSecondReviewer}{John Doe}
+\newcommand{\thesisSecondReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisSecondReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisFirstSupervisor}{Pr. Michael NILGES}
+\newcommand{\thesisSecondSupervisor}{Dr. Benjamin BARDIAUX}
+
+\newcommand{\thesisUniversity}{\protect{Université Pierre et Marie Curie}}
+\newcommand{\thesisUniversityDepartment}{\'Ecole doctorale Complexit\'e du Vivant}
+\newcommand{\thesisUniversityInstitute}{Institut Pasteur}
+\newcommand{\thesisUniversityGroup}{Unité de Bioinformatique Structurale}
+\newcommand{\thesisUniversityCity}{Paris Cedex 15}
+\newcommand{\thesisUniversityStreetAddress}{25-28 Rue du Docteur Roux}
+\newcommand{\thesisUniversityPostalCode}{75724}
+
+%----------------------------------------------------------------------------------------
+%	USEFUL COMMANDS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.} 
+
+\newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
+\providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\newlength{\abcd} % for ab..z string length calculation
+
+% **************************************************
+% Load and Configure Packages
+% **************************************************
+
+\hypersetup{					% setup the hyperref-package options
+	pdftitle={\thesisTitle},	% 	- title (PDF meta)
+	pdfsubject={\thesisSubject},% 	- subject (PDF meta)
+	pdfauthor={\thesisName},	% 	- author (PDF meta)
+	plainpages=false,			% 	-
+	colorlinks=true,			% 	- colorize links?
+    linktocpage=true,
+	pdfborder={0 0 0},			% 	-
+	breaklinks=true,			% 	- allow line break inside links
+	bookmarksnumbered=true,		%
+	bookmarksopen=true,			%,
+    linkcolor=ctcolorblue,
+    citecolor=black,
+}
+
+\PassOptionsToPackage{acronym,translate=babel,xindy,toc,nopostdot,nonumberlist}{glossaries}
+\usepackage{glossaries}
+
+\usepackage{chngcntr}			% Reset Chapter counter for each part
+\counterwithin*{chapter}{part}
+
+\DeclareCiteCommand{\citeauthorfirstlast}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \DeclareNameAlias{labelname}{first-last}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printnames{labelname}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}

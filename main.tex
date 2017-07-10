@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis Typographic Thesis
+% LaTeX Template
+% Version 1.4 (1/1/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de) with commenting modifications by:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License (v2)
+%
+% General Tips:
+% 1) Make sure to edit the classicthesis-config.file
+% 2) New enumeration (A., B., C., etc in small caps): \begin{aenumerate} \end{aenumerate}
+% 3) For margin notes: \marginpar or \graffito{}
+% 4) Do not use bold fonts in this style, it is designed around them
+% 5) Use tables as in the examples
+% 6) See classicthesis-preamble.sty for useful commands
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	SILENCE ANNOYING WARNINGS
+%----------------------------------------------------------------------------------------
+
+\RequirePackage{silence}
+\WarningFilter{titlesec}{Non standard sectioning command}
+\WarningFilter{scrreprt}{Usage of package}
+\WarningFilter{scrreprt}{Activating an ugly workaround}
+\WarningFilter{titlesec}{Non standard sectioning command detected}
+
+
+% **************************************************
+% Document Class Definition
+% **************************************************
+\documentclass[%
+	paper=A4,					% paper size --> A4 is default in Germany
+	twoside=true,				% onesite or twoside printing
+	openright,					% doublepage cleaning ends up right side
+	parskip=full,				% spacing value / method for paragraphs
+	chapterprefix=true,			% prefix for chapter marks
+	11pt,						% font size
+	headings=normal,			% size of headings
+	bibliography=totoc,			% include bib in toc
+	listof=totoc,				% include listof entries in toc
+	titlepage=on,				% own page for each title page
+	captions=tableabove,		% display table captions above the float env
+	draft=false,				% value for draft version
+    openany						% Avoid blank page after each new part, chapter, ...
+]{scrreprt}%
+
+\input{cleanthesis-config}
+
+% **************************************************
+% Debug LaTeX Information
+% **************************************************
+%\listfiles
+\input{FrontBackMatter/Glossary}
+\makeglossaries
+
+% **************************************************
+% Document CONTENT
+% **************************************************
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	PRE-CONTENT THESIS PAGES
+%----------------------------------------------------------------------------------------
+
+% \frenchspacing % Reduces space after periods to make text more compact
+
+% \raggedbottom % Makes all pages the height of the text on that page
+
+\pagenumbering{roman} % Roman page numbering prior to the start of the thesis content (i, ii, iii, etc)
+\pagestyle{empty} % Suppress headers for the pre-content pages
+
+\include{FrontBackMatter/Titlepages}		% INCLUDE: all titlepages
+
+\pagestyle{plain}				% display just page numbers
+
+\clearpage\include{FrontBackMatter/Abstract}		% INCLUDE: the abstracts (english and german)
+
+% \cleardoublepage\include{FrontBackMatter/Foreword} % Uncomment and create a Foreword.tex to include a foreword
+
+\clearpage\include{FrontBackMatter/Acknowledgements} % INCLUDE: acknowledgement
+% \cleardoublepage
+\clearpage
+\clearpage\include{FrontBackMatter/Contents} % Contents, list of figures/tables/listings and acronyms
+
+% \setcounter{tocdepth}{2}		% define depth of toc
+% \tableofcontents				% display table of contents
+% \cleardoublepage
+
+% \cleardoublepage % Avoids problems with pdfbookmark
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\pagenumbering{arabic}			% arabic page numbering
+\setcounter{page}{1}			% set page counter. Manually start the page counter at an arbitrary value (for example if you wish to count the pre-content pages in the page count)
+\pagestyle{maincontentstyle} 	% fancy header and footer
+
+%------------------------------------------------
+\ctparttext{
+\cleanchapterquote{In the drama of life on a molecular scale, proteins are where the action is}{\citeauthorfirstlast{Lesk2001}}{\citetitle{Lesk2001}}
+
+
+\blindtext} % Describe here content of the first part
+
+\part{PART I} % First part of the thesis
+
+\include{Parts/Part01/Chapter01} % Chapter 1
+\include{Parts/Part01/Chapter02} % Chapter 2
+\include{Parts/Part01/Chapter03} % Chapter 3
+\include{Parts/Part01/Chapter04} % Chapter 4 
+
+% \cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+\ctparttext{\blindtext} % Text on the Part 2 page describing the content in Part 2
+% Soulever dans ce § les principales questions soulevées dans cette partie
+
+\part{PART II} % Second part of the thesis
+
+\include{Parts/Part02/Chapter01} % Chapter 1
+\include{Parts/Part02/Chapter02} % Chapter 2
+\include{Parts/Part02/Chapter03} % Chapter 3
+\include{Parts/Part02/Chapter04} % Chapter 4
+
+\cleardoublepage % Empty page before the start of the next part
+
+
+% %------------------------------------------------
+
+\ctparttext{\blindtext} % Text on the Part 3 page describing the content in Part 3
+
+\part{PART III} % Third part of the thesis
+
+\include{Parts/Part03/Chapter01} % Chapter 1
+\include{Parts/Part03/Chapter02} % Chapter 2
+\include{Parts/Part03/Chapter03} % Chapter 3
+% \include{Parts/Part03/Chapter04} % Chapter 4     Discussions ???
+\include{Parts/Part03/Chapter05} % Chapter 5
+
+
+% %------------------------------------------------
+
+\ctparttext{\blindtext} % Text on the Part 3 page describing the content in Part 3
+
+\part{PART IV} % Third part of the thesis
+
+\include{Parts/Part04/Chapter01} % Chapter 1
+\include{Parts/Part04/Chapter02} % Chapter 2
+\include{Parts/Part04/Chapter03} % Chapter 3
+% \include{Parts/Part04/Chapter04} % Chapter 4      Discussions ???
+\include{Parts/Part04/Chapter05} % Chapter 5
+
+% \cleardoublepage % Empty page before the start of the next part
+
+\part{PART V} % Third part of the thesis
+\include{Parts/Part05/Conclusions} % Chapter 5
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix
+\addtocontents{toc}{\protect\vspace{1em}}
+
+% \part{Annexes} % New part of the thesis for the appendix
+
+% % \cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	POST-CONTENT THESIS PAGES
+%----------------------------------------------------------------------------------------
+
+% \listoffigures
+% \cleardoublepage
+
+% \listoftables
+% \cleardoublepage
+
+\input{FrontBackMatter/Bibliography}
+
+% \cleardoublepage\include{FrontBackMatter/Publications} % Publications from the thesis page
+
+% \input{FrontBackMatter/Colophon}
+% \cleardoublepage
+
+\input{FrontBackMatter/Declaration}
+% \clearpage
+\mbox{}
+
+%----------------------------------------------------------------------------------------
+
+% **************************************************
+% End of Document CONTENT
+% **************************************************
+\end{document}
